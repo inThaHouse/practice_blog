@@ -29,14 +29,14 @@ const TextBox = styled('div')`
 
   h3 {
     font-weight: 300;
-    font-size: 22px;
+    font-size: 2.5rem;
   }
 `
 
 const Hero = (): React.ReactElement => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "sharingan.jpg" }) {
+      image: file(relativePath: { eq: "ff.jpg" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -52,8 +52,8 @@ const Hero = (): React.ReactElement => {
 
   const imgStyle = css`
     border-radius: 50%;
-    max-width: 280px;
     margin: auto;
+    max-width: 280px;
   `
 
   return (
@@ -64,7 +64,8 @@ const Hero = (): React.ReactElement => {
         </div>
         <TextBox>
           <h1>Hi.</h1>
-          <h3>Welcome to my blog</h3>
+          <h3>I'm a Coder.</h3>
+          <h3>I code for fun (and 💵)</h3>
         </TextBox>
       </HeroCtn>
     </>
