@@ -12,7 +12,7 @@ export default () => {
     <Layout>
       <Hero />
       <ImageList />
-      <h2>latest blog post</h2>
+      <h2>latest blog post (still a lot of fucken work to do)</h2>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
         {blog.map((post: any) => {
           return (
