@@ -20,7 +20,7 @@ const ImageList = (): React.ReactElement => {
           }
         }
       }
-      image2: file(relativePath: { eq: "ff.jpg" }) {
+      image2: file(relativePath: { eq: "dragoon.jpg" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp

@@ -11,6 +11,15 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
+      resolve: 'gatsby-plugin-mdx',
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/Layout.tsx'),
+        },
+        gatsbyRemarksPlugins: [{ resolve: 'gatsby-remark-images' }],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -21,7 +30,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'blog',
-        path: './src/content/blog',
+        path: './src/blog',
       },
     },
   ],
