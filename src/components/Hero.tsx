@@ -31,12 +31,25 @@ const TextBox = styled('div')`
     font-weight: 300;
     font-size: 2.5rem;
   }
+
+  @media (max-width: 500px) {
+    bottom: 25px;
+
+    h1 {
+      text-shadow: 2px -2px 0 #fff;
+      font-size: 3rem;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+    }
+  }
 `
 
 const Hero = (): React.ReactElement => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "ff.jpg" }) {
+      image: file(relativePath: { eq: "cloud-strife.jpg" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -60,7 +73,7 @@ const Hero = (): React.ReactElement => {
     <>
       <HeroCtn>
         <div css={imgContainerStyle}>
-          <Img css={imgStyle} fluid={image.sharp.fluid} alt={'sharingan'} />
+          <Img css={imgStyle} fluid={image.sharp.fluid} alt={'Cloud Strife'} />
         </div>
         <TextBox>
           <h1>Hi.</h1>

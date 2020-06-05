@@ -20,7 +20,7 @@ const ImageList = (): React.ReactElement => {
           }
         }
       }
-      image2: file(relativePath: { eq: "ff7.webp" }) {
+      image2: file(relativePath: { eq: "ff.jpg" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -34,7 +34,7 @@ const ImageList = (): React.ReactElement => {
           }
         }
       }
-      image4: file(relativePath: { eq: "drg.png" }) {
+      image4: file(relativePath: { eq: "duo.jpg" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp
@@ -47,7 +47,12 @@ const ImageList = (): React.ReactElement => {
   const images = [image1, image2, image3, image4]
 
   const imageStyle = css`
-    width: 20%;
+    width: 23%;
+    background: #222;
+
+    &:hover {
+      opacity: 0.5;
+    }
   `
 
   return (

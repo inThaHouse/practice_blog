@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gatsby develop --port 80",
+    "dev": "gatsby develop --port 1000",
     "lint": "eslint --ignore-path .gitignore",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx)\""
   },
