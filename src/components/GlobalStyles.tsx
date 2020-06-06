@@ -16,7 +16,13 @@ const GlobalStyles = (): React.ReactElement => {
           body {
             font-size: 18px;
             line-height: 1.4;
+            height: 100%;
             font-family: sans-serif;
+
+            /* remove margin for the main div that gatsby mounts */
+            > div {
+              margin-top: 0;
+            }
           }
 
           body {
@@ -31,6 +37,12 @@ const GlobalStyles = (): React.ReactElement => {
           h6 {
             line-height: 1.2;
             color: #222222;
+          }
+
+          p {
+            font-family: 'Noto sans';
+            font-size: 13px;
+            line-height: 1.75;
           }
 
           li {
