@@ -10,6 +10,7 @@ const HeroCtn = styled('div')`
   align-items: center;
   flex-direction: column;
   font-family: 'poppins';
+  margin-top: 55px;
 `
 
 const TextBox = styled('div')`
@@ -19,6 +20,7 @@ const TextBox = styled('div')`
   align-items: center;
   position: relative;
   bottom: 45px;
+  margin-bottom: -30px;
 
   h1 {
     font-size: 9rem;
@@ -46,6 +48,16 @@ const TextBox = styled('div')`
   }
 `
 
+const imgContainerStyle = css`
+  width: 100%;
+`
+
+const imgStyle = css`
+  border-radius: 50%;
+  margin: auto;
+  max-width: 280px;
+`
+
 const Hero = (): React.ReactElement => {
   const { image } = useStaticQuery(graphql`
     query {
@@ -59,16 +71,6 @@ const Hero = (): React.ReactElement => {
     }
   `)
 
-  const imgContainerStyle = css`
-    width: 100%;
-  `
-
-  const imgStyle = css`
-    border-radius: 50%;
-    margin: auto;
-    max-width: 280px;
-  `
-
   return (
     <>
       <HeroCtn>
@@ -78,7 +80,7 @@ const Hero = (): React.ReactElement => {
         <TextBox>
           <h1>Hi.</h1>
           <h3>I'm a Coder.</h3>
-          <h3>I code for fun (and 💵)</h3>
+          <h3>This is my blog.</h3>
         </TextBox>
       </HeroCtn>
     </>

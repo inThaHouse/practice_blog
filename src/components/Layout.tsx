@@ -4,10 +4,20 @@ import { Helmet } from 'react-helmet'
 import { css } from '@emotion/core'
 import GlobalStyles from './GlobalStyles'
 import Navigation from './Navigation'
+import Footer from './Footer'
 
 interface Props {
   children: React.ReactNode
 }
+
+const mainElementStyles = css`
+  margin: 2rem auto;
+  max-width: 70vw;
+
+  @media (max-width: 500px) {
+    max-width: 90vw;
+  }
+`
 
 const Layout = ({ children }: Props): React.ReactElement => {
   const { title, description } = useSiteMetadata()
@@ -27,16 +37,14 @@ const Layout = ({ children }: Props): React.ReactElement => {
           href='https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap'
           rel='stylesheet'
         />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap'
+          rel='stylesheet'
+        />
       </Helmet>
       <Navigation />
-      <main
-        css={css`
-          margin: 2rem auto;
-          max-width: 70vw;
-        `}
-      >
-        {children}
-      </main>
+      <main css={mainElementStyles}>{children}</main>
+      <Footer />
     </>
   )
 }

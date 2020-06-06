@@ -7,11 +7,26 @@ import { css } from '@emotion/core'
 const ImageContainer = styled('div')`
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
 `
 
+const imageStyle = css`
+  width: 23%;
+  background: #222;
+
+  @media (max-width: 768px) {
+    width: 48%;
+    margin-bottom: 15px;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+`
+
 const ImageList = (): React.ReactElement => {
-  const { image1, image2, image3, image4 } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       image1: file(relativePath: { eq: "dragoon.jpg" }) {
         sharp: childImageSharp {
@@ -44,20 +59,11 @@ const ImageList = (): React.ReactElement => {
     }
   `)
 
-  const images = [image1, image2, image3, image4]
-
-  const imageStyle = css`
-    width: 23%;
-    background: #222;
-
-    &:hover {
-      opacity: 0.5;
-    }
-  `
+  const images = Object.values(data)
 
   return (
     <ImageContainer>
-      {images.map((image, index) => (
+      {images.map((image: any, index) => (
         <Img css={imageStyle} key={index} fluid={image.sharp.fluid} />
       ))}
     </ImageContainer>

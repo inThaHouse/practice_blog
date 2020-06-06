@@ -3,25 +3,26 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import ImageList from '../components/ImageList'
 import useBlogPosts from '../hooks/use-BlogPosts'
-import { Link } from 'gatsby'
+import SmallHeader from '../components/SmallHeader'
+import BlogList from '../components/BlogList'
+import ButtonLink from '../components/Button'
 
 export default () => {
   const blog = useBlogPosts()
-  console.log(blog)
+
   return (
     <Layout>
       <Hero />
+      <SmallHeader header={'Some Random Images'} />
       <ImageList />
-      <h2>latest blog post (still a lot of fucken work to do)</h2>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {blog.map((post: any) => {
-          return (
-            <Link key={post.slug} to={`/${post.slug}`}>
-              {post.slug}
-            </Link>
-          )
-        })}
-      </div>
+      <SmallHeader header={'Latest Blog Post'} />
+      <BlogList blog={blog} />
+      <ButtonLink
+        primaryColor={'#fff'}
+        secondaryColor={'#222'}
+        buttonText={'See More Posts'}
+        path={'blog'}
+      />
     </Layout>
   )
 }

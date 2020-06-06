@@ -19,6 +19,10 @@ const GlobalStyles = (): React.ReactElement => {
             font-family: sans-serif;
           }
 
+          body {
+            margin-top: 50px;
+          }
+
           h1,
           h2,
           h3,

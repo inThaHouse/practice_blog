@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "gatsby develop --port 1000",
+    "dev": "gatsby develop",
     "lint": "eslint --ignore-path .gitignore",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx)\""
   },
@@ -51,6 +51,7 @@
     "@types/react-helmet": "^6.0.0",
     "@typescript-eslint/eslint-plugin": "^3.1.0",
     "@typescript-eslint/parser": "^3.1.0",
+    "eslint": "^7.1.0",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "typescript": "^3.9.3"

@@ -5,13 +5,18 @@ import { css } from '@emotion/core'
 
 const NavigationCtn = styled('div')`
   background: #212933;
-  padding: 10px 15vw;
+  padding: 15px 15vw;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 5;
 `
 
 const navItemStyles = css`
   text-decoration: none;
   color: #fff;
-  margin: 10px;
+  margin: 0 10px;
   font-size: 10px;
   font-family: 'Lato' sans-serif;
   font-weight: bold;
