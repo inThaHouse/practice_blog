@@ -1,8 +1,12 @@
 import React from 'react'
 import Layout from '../components/Layout'
+import MainHeader from '../components/MainHeader'
 
 export default () => (
   <Layout>
-    <h1>blog here under development</h1>
+    <MainHeader
+      headerText='Blog Page is under development'
+      alignment='center'
+    />
   </Layout>
 )

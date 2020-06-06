@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
+import RoundImage from './RoundImage'
 
 const HeroCtn = styled('div')`
   display: flex;
@@ -48,16 +49,6 @@ const TextBox = styled('div')`
   }
 `
 
-const imgContainerStyle = css`
-  width: 100%;
-`
-
-const imgStyle = css`
-  border-radius: 50%;
-  margin: auto;
-  max-width: 280px;
-`
-
 const Hero = (): React.ReactElement => {
   const { image } = useStaticQuery(graphql`
     query {
@@ -74,9 +65,7 @@ const Hero = (): React.ReactElement => {
   return (
     <>
       <HeroCtn>
-        <div css={imgContainerStyle}>
-          <Img css={imgStyle} fluid={image.sharp.fluid} alt={'Cloud Strife'} />
-        </div>
+        <RoundImage image={image} />
         <TextBox>
           <h1>Hi.</h1>
           <h3>I'm a Coder.</h3>

@@ -1,7 +1,9 @@
-import HeaderImage from '../components/HeaderImage.tsx'
-import SmallHeader from '../components/SmallHeader.tsx'
+import HeaderImage from '../components/HeaderImage'
+import SmallHeader from '../components/SmallHeader'
+import ButtonLink from '../components/Button'
+import MainHeader from '../components/MainHeader'
 
-<h1 align='center'>About This Project!</h1>
+<MainHeader headerText={'About This Project!'} alignment={'center'} />
 
 <SmallHeader
   header={`I'm gonna talk about myself here.`}
@@ -30,3 +32,12 @@ import SmallHeader from '../components/SmallHeader.tsx'
   </a>
   .
 </p>
+
+Or.
+
+<ButtonLink
+  path='blog'
+  primaryColor={'white'}
+  secondaryColor={'black'}
+  buttonText={'Visit The Blog!'}
+/>

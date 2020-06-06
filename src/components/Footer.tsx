@@ -6,6 +6,7 @@ const footerStyles = css`
   text-align: center;
   border-top: 1px solid #f1f1f1;
   padding: 10px 0;
+  margin-top: 1rem;
 `
 
 const Footer = (): React.ReactElement => {
