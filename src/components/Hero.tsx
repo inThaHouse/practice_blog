@@ -69,7 +69,7 @@ const Hero = (): React.ReactElement => {
         <TextBox>
           <h1>Hi.</h1>
           <h3>I'm a Coder.</h3>
-          <h3>This is my blog.</h3>
+          <h3>This is my fake blog.</h3>
         </TextBox>
       </HeroCtn>
     </>

@@ -6,10 +6,12 @@ import { BlogPostType } from '../models/BlogPostType'
 
 interface BlogListProps {
   blog: BlogPostType[]
+  isFull?: boolean
 }
 
 interface BlogLinkProps {
   blog: BlogPostType
+  isFull?: boolean
 }
 
 const blogListCtnStyles = css`
@@ -46,7 +48,7 @@ const blogLinkStyles = css`
   }
 `
 
-const BlogLink = ({ blog }: BlogLinkProps): React.ReactElement => {
+const BlogLink = ({ blog, isFull }: BlogLinkProps): React.ReactElement => {
   return (
     <Link css={blogLinkStyles} key={blog.slug} to={`/${blog.slug}`}>
       <Image
@@ -57,15 +59,18 @@ const BlogLink = ({ blog }: BlogLinkProps): React.ReactElement => {
         `}
         fluid={blog.image.sharp.fluid}
       />
-      {blog.title}
+      <div>
+        {blog.title}
+        {isFull && <p>{blog.excerpt}</p>}
+      </div>
     </Link>
   )
 }
 
-const BlogList = ({ blog }: BlogListProps): React.ReactElement => (
+const BlogList = ({ blog, isFull }: BlogListProps): React.ReactElement => (
   <div css={blogListCtnStyles}>
     {blog.map((post: BlogPostType, index) => (
-      <BlogLink key={index} blog={post} />
+      <BlogLink isFull={isFull} key={index} blog={post} />
     ))}
   </div>
 )

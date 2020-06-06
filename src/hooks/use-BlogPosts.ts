@@ -23,7 +23,7 @@ const useBlogPosts = (): BlogPostType[] => {
       }
     }
   `)
-  console.log(data)
+
   return data.allMdx.nodes.map((data: any) => ({
     title: data.frontmatter.title,
     author: data.frontmatter.author,
