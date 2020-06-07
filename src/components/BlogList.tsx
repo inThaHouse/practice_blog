@@ -112,7 +112,7 @@ const BlogList = ({
   imgWidth,
 }: BlogListProps): React.ReactElement => (
   <div css={blogListTextInfoStyles}>
-    {blog.map((post: BlogPostType, index) => (
+    {blog.map((post: BlogPostType, index: number) => (
       <BlogLink isFull={isFull} key={index} blog={post} imgWidth={imgWidth} />
     ))}
   </div>

@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import { css } from '@emotion/core'
+import { Breakpoints } from '../models/enum/Breakpoints'
 
 const ImageContainer = styled('div')`
   display: flex;
@@ -15,7 +16,7 @@ const imageStyle = css`
   width: 23%;
   background: #222;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${Breakpoints.TABLET}) {
     width: 48%;
     margin-bottom: 15px;
   }
