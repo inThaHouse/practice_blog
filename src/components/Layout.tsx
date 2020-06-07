@@ -12,10 +12,14 @@ interface Props {
 
 const mainElementStyles = css`
   margin: 70px auto 0;
-  max-width: 70vw;
+  max-width: 80vw;
 
-  @media (max-width: 500px) {
+  @media (max-width: 960px) {
     max-width: 90vw;
+  }
+
+  @media (max-width: 450px) {
+    max-width: 95vw;
   }
 `
 
@@ -40,10 +44,6 @@ const Layout = ({ children }: Props): React.ReactElement => {
         <link
           href='https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap'
           rel='stylesheet'
-        />
-        <link
-          rel='stylesheet'
-          href='https://fonts.googleapis.com/css?family=Rouge+Script'
         />
       </Helmet>
       <Navigation />

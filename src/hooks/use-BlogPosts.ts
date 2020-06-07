@@ -12,7 +12,7 @@ const useBlogPosts = (): BlogPostType[] => {
             slug
             image {
               sharp: childImageSharp {
-                fluid(maxWidth: 100, maxHeight: 100) {
+                fluid {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }

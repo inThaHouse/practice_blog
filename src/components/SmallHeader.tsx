@@ -4,15 +4,20 @@ import { css } from '@emotion/core'
 interface Props {
   header: string
   margin?: string
+  alignment?: string
 }
 
-const SmallHeader = ({ header, margin }: Props): React.ReactElement => {
+const SmallHeader = ({
+  header,
+  margin,
+  alignment,
+}: Props): React.ReactElement => {
   const smallHeaderStyles = css`
     color: #ccc;
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-align: center;
+    text-align: ${alignment ? alignment : 'center'};
     margin: ${margin ?? '40px 0'};
   `
 

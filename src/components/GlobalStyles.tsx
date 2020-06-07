@@ -38,6 +38,7 @@ const GlobalStyles = (): React.ReactElement => {
             font-family: 'Noto sans';
             font-size: 13px;
             line-height: 1.75;
+            font-weight: 400;
           }
 
           li {

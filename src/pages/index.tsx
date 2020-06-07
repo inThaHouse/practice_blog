@@ -16,7 +16,7 @@ export default () => {
       <SmallHeader header={'Some Random Images'} />
       <ImageList />
       <SmallHeader header={'Latest Blog Post'} />
-      <BlogList blog={blog} />
+      <BlogList blog={blog.slice(2)} imgWidth={'30%'} />
       <ButtonLink
         primaryColor={'#fff'}
         secondaryColor={'#222'}
