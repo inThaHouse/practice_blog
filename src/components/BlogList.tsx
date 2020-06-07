@@ -2,6 +2,8 @@ import React from 'react'
 import { css } from '@emotion/core'
 import Image from 'gatsby-image'
 import { Link } from 'gatsby'
+import { Colors } from '../models/enum/Colors'
+import { Breakpoints } from '../models/enum/Breakpoints'
 import { BlogPostType } from '../models/BlogPostType'
 
 interface BlogListProps {
@@ -21,7 +23,7 @@ const blogListTextInfoStyles = css`
   flex-direction: column;
   margin: 0 3rem;
 
-  @media (max-width: 768px) {
+  @media (max-width: ${Breakpoints.TABLET}) {
     margin: 0;
   }
 `
@@ -32,22 +34,22 @@ const BlogLink = ({
   imgWidth,
 }: BlogLinkProps): React.ReactElement => {
   const blogLinkStyles = css`
-    color: #222;
+    color: ${Colors.BLACK};
     text-decoration: none;
     outline: none;
     font-size: 22px;
     padding: 5px 0;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto sans', sans-serif;
     line-height: 1.3;
     font-weight: 700;
-    border-bottom: 1px solid #f3f3f3;
+    border-bottom: 1px solid ${Colors.LIGHT_GRAY};
     text-transform: capitalize;
     display: flex;
     align-items: center;
     transition: all 0.1s;
     width: 100%;
 
-    @media (max-width: 768px) {
+    @media (max-width: ${Breakpoints.TABLET}) {
       font-size: 13px;
     }
 
@@ -56,7 +58,7 @@ const BlogLink = ({
     }
 
     &:hover {
-      border-bottom: 2px solid #f3f3f3;
+      border-bottom: 2px solid ${Colors.LIGHT_GRAY};
     }
   `
 
@@ -64,13 +66,13 @@ const BlogLink = ({
     width: ${imgWidth};
     margin-right: 25px;
 
-    @media (max-width: 500px) {
+    @media (max-width: ${Breakpoints.MOBILE}) {
       margin-right: 5px;
     }
   `
 
   const excerptStyles = css`
-    @media (max-width: 500px) {
+    @media (max-width: ${Breakpoints.MOBILE}) {
       font-size: 11px;
       line-height: 1;
     }
@@ -80,16 +82,17 @@ const BlogLink = ({
     font-weight: bold;
   `
 
+  const blogTextInfoContainerStyles = css`
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  `
+
   return (
     <>
       <Link css={blogLinkStyles} key={blog.slug} to={`/${blog.slug}`}>
         <Image css={imageStyles} fluid={blog.image.sharp.fluid} />
-        <div
-          css={css`
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-          `}>
+        <div css={blogTextInfoContainerStyles}>
           {blog.title}
           {isFull && (
             <div>

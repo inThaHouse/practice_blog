@@ -5,6 +5,7 @@ import { css } from '@emotion/core'
 import GlobalStyles from './GlobalStyles'
 import Navigation from './Navigation'
 import Footer from './Footer'
+import { Breakpoints } from '../models/enum/Breakpoints'
 
 interface Props {
   children: React.ReactNode
@@ -14,11 +15,11 @@ const mainElementStyles = css`
   margin: 70px auto 0;
   max-width: 80vw;
 
-  @media (max-width: 960px) {
+  @media (max-width: ${Breakpoints.MEDIUM}) {
     max-width: 90vw;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: ${Breakpoints.MOBILE}) {
     max-width: 95vw;
   }
 `

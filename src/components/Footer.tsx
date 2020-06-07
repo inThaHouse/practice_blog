@@ -1,10 +1,11 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { Colors } from '../models/enum/Colors'
 
 const footerStyles = css`
   font-size: 11px;
   text-align: center;
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid ${Colors.GRAY};
   padding: 10px 0;
   margin-top: 1rem;
 `

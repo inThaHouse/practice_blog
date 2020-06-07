@@ -2,9 +2,10 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
 import { css } from '@emotion/core'
+import { Colors } from '../models/enum/Colors'
 
 const NavigationCtn = styled('div')`
-  background: #212933;
+  background: ${Colors.DARK_BLUE};
   padding: 15px 15vw;
   display: flex;
   position: fixed;
@@ -15,7 +16,7 @@ const NavigationCtn = styled('div')`
 
 const navItemStyles = css`
   text-decoration: none;
-  color: #fff;
+  color: ${Colors.WHITE};
   margin: 0 10px;
   font-size: 10px;
   font-family: 'Lato' sans-serif;

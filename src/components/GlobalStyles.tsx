@@ -1,5 +1,6 @@
 import React from 'react'
 import { Global, css } from '@emotion/core'
+import { Colors } from '../models/enum/Colors'
 
 const GlobalStyles = (): React.ReactElement => {
   return (
@@ -31,7 +32,7 @@ const GlobalStyles = (): React.ReactElement => {
           h5,
           h6 {
             line-height: 1.2;
-            color: #222222;
+            color: ${Colors.BLACK};
           }
 
           p {

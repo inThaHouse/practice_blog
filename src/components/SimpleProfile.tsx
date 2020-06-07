@@ -1,5 +1,4 @@
 import React from 'react'
-import { css } from '@emotion/core'
 import Image from 'gatsby-image'
 import SmallHeader from './SmallHeader'
 import { graphql, useStaticQuery } from 'gatsby'

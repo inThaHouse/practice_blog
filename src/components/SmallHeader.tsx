@@ -1,5 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
+import { Colors } from '../models/enum/Colors'
 
 interface Props {
   header: string
@@ -13,7 +14,7 @@ const SmallHeader = ({
   alignment,
 }: Props): React.ReactElement => {
   const smallHeaderStyles = css`
-    color: #ccc;
+    color: ${Colors.LIGHT_GRAY};
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;

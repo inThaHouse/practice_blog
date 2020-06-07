@@ -5,6 +5,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import MainHeader from '../components/MainHeader'
 import SmallHeader from '../components/SmallHeader'
 import ButtonLink from '../components/Button'
+import { Colors } from '../models/enum/Colors'
 
 export const query = graphql`
   query($slug: String!) {
@@ -30,8 +31,8 @@ const PostTemplate = ({ data: { mdx } }) => {
       <MDXRenderer>{mdx.body}</MDXRenderer>
       <ButtonLink
         path='blog'
-        primaryColor={'white'}
-        secondaryColor={'black'}
+        primaryColor={Colors.WHITE}
+        secondaryColor={Colors.BLACK}
         buttonText={'See more Blog Posts!'}
       />
     </Layout>

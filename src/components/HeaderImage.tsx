@@ -22,10 +22,7 @@ const HeaderImage = (): React.ReactElement => {
   `)
 
   return (
-    <ImageBackground
-      Tag='section'
-      fluid={image.sharp.fluid}
-      fadeIn='soft'></ImageBackground>
+    <ImageBackground Tag='section' fluid={image.sharp.fluid} fadeIn='soft' />
   )
 }
 

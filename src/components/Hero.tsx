@@ -2,13 +2,15 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { graphql, useStaticQuery } from 'gatsby'
 import RoundImage from './RoundImage'
+import { Colors } from '../models/enum/Colors'
+import { Breakpoints } from '../models/enum/Breakpoints'
 
 const HeroCtn = styled('div')`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'poppins';
+  font-family: 'Poppins';
   margin-top: 55px;
 `
 
@@ -24,7 +26,7 @@ const TextBox = styled('div')`
   h1 {
     font-size: 9rem;
     letter-spacing: -3px;
-    text-shadow: 9px -9px 0 #fff;
+    text-shadow: 9px -9px 0 ${Colors.WHITE};
     line-height: 1;
   }
 
@@ -33,11 +35,11 @@ const TextBox = styled('div')`
     font-size: 2.5rem;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: ${Breakpoints.MOBILE}) {
     bottom: 25px;
 
     h1 {
-      text-shadow: 2px -2px 0 #fff;
+      text-shadow: 2px -2px 0 ${Colors.WHITE};
       font-size: 3rem;
     }
 

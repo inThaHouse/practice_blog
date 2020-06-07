@@ -6,6 +6,7 @@ import useBlogPosts from '../hooks/use-BlogPosts'
 import SmallHeader from '../components/SmallHeader'
 import BlogList from '../components/BlogList'
 import ButtonLink from '../components/Button'
+import { Colors } from '../models/enum/Colors'
 
 export default () => {
   const blog = useBlogPosts()
@@ -16,10 +17,10 @@ export default () => {
       <SmallHeader header={'Some Random Images'} />
       <ImageList />
       <SmallHeader header={'Latest Blog Post'} />
-      <BlogList blog={blog.slice(2)} imgWidth={'30%'} />
+      <BlogList blog={blog.slice(2)} imgWidth={'20%'} />
       <ButtonLink
-        primaryColor={'#fff'}
-        secondaryColor={'#222'}
+        primaryColor={Colors.WHITE}
+        secondaryColor={Colors.BLACK}
         buttonText={'See More Posts'}
         path={'blog'}
       />
